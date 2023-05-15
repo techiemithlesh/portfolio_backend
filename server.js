@@ -18,11 +18,11 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use(cors());
 
 // Serve static files from the build directory
-app.use(express.static(path.join(__dirname, 'client', 'build')));
+app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
 
-// app.get('/', (req, res) => {
-//     res.sendFile(path.join(__dirname, 'client', 'build', 'index.html'));
-//   });
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, '..', 'client', 'build', 'index.html'));
+  });
 
 
 // Parse incoming request body
